@@ -62,6 +62,7 @@ function handleButtonClick() {
 
 // Steve's code for autolocation added seperately bacuase api call is a different format
 const autoLocateButton = document.getElementById("auto-location");
+const forecastMobileElement = document.getElementById("forecast-mobile"); //Part of table view for mobile users
 
 autoLocateButton.addEventListener('click', handleAutoClick);
 
@@ -96,6 +97,7 @@ function handleAutoClick() {
             })
             .then(function (data) {
                 forecastAreaElement.innerHTML = "";
+                forecastMobileElement.innerHTML = ""; //Part of table view for mobile users
 
                 const cityName = data.city.name;
                 cityNameElement.innerText = cityName;
@@ -117,7 +119,7 @@ function handleAutoClick() {
                     const currentTemp = Math.round(data.list[i].main.temp);
 
                     const timeStamp = data.list[i].dt;
-                    const dayOfWeek = new Date(timeStamp * 1000).toLocaleDateString("en-GB", { weekday: 'long' });
+                    const dayOfWeek = new Date(timeStamp * 1000).toLocaleDateString("en-GB", { weekday: 'short' });
 
                     const htmlString = `
                         <div class="col">
@@ -128,6 +130,15 @@ function handleAutoClick() {
                         </div>
                     `;
                     forecastAreaElement.innerHTML += htmlString;
+
+                    const htmlString2 = `
+                        <tr>
+                            <td><h3>${dayOfWeek}</h3></td>
+                            <td><img src="${currConditionImage}"></td>
+                            <td><h4>${currentTemp}°C</h4></td>
+                        </tr>
+                    `;
+                    forecastMobileElement.innerHTML += htmlString2;
                 }
             
             
