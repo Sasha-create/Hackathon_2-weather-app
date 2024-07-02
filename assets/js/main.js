@@ -18,6 +18,9 @@ function handleButtonClick() {
 
     fetch(url)
         .then(function (response) {
+            if (!response.ok) {
+                throw new Error(`Error in weather data`);
+            }
             return response.json();
         })
         .then(function (data) {
@@ -56,6 +59,8 @@ function handleButtonClick() {
                 forecastAreaElement.innerHTML += htmlString;
             }
         
-        
+        })
+        .catch(function (error) {
+            alert.error(`Failed to retrieve weather data: ${error.message}`);
         });
-}
+    }
