@@ -11,7 +11,7 @@ const cityNameElement = document.getElementById("city-name");
 const currTempElement = document.getElementById("curr-temp");
 const currConditionElement = document.getElementById("curr-condition");
 const currConditionImageElement = document.getElementById("curr-condition-img");
-const cityInputElement = document.getElementById("city-input");
+const cityInputElement = document.getElementById("mobileSearchCity");
 const submitButtonElement = document.getElementById("submit-button");
 const forecastAreaElement = document.getElementById("forecast-area");
 
@@ -22,6 +22,8 @@ const timezone = document.getElementById('time-zone');
 const countryEl = document.getElementById('country');
 const weatherForecastEl = document.getElementById('weather-forecast');
 const currentTempEl = document.getElementById('current-temp');
+
+
 
 setInterval(() => {
     const time = new Date();
@@ -120,6 +122,7 @@ function handleButtonClick() {
             const currentTemp = data.list[0].main.temp;
             const realFeel =  data.list[0].main.feels_like;
             //const timezone =  data.timezone;
+
             //const windSpeed = data.wind.speed;
            // const windDirection = data.wind.deg;
             //const visibility = data.visibility / 1000;
@@ -141,6 +144,7 @@ function handleButtonClick() {
             document.getElementById("minTemperatureAdditionalValue").innerHTML = minTemperature + "<sup>o</sup>C";
             
             document.getElementById("humidityAdditionalValue").innerHTML = humidity;
+
 
             //document.getElementById("time-zone").innerHTML = timezone;
            // document.getElementById("sunriseAdditionalValue").innerHTML = sunrise;
