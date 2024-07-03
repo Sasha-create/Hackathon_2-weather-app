@@ -50,7 +50,8 @@ function handleButtonClick() {
                 const currentConditionImageCode = data.list[i].weather[0].icon;
                 const currConditionImage = `https://openweathermap.org/img/wn/${currentConditionImageCode}@2x.png`;
                 const currentTemp = Math.round(data.list[i].main.temp);
-
+                const humidity = data.list[i].main.humidity;               
+                const windSpeed = data.list[i].wind.speed;
                 const timeStamp = data.list[i].dt;
                 const dayOfWeek = new Date(timeStamp * 1000).toLocaleDateString("en-GB", { weekday: 'long' });
 
@@ -60,6 +61,8 @@ function handleButtonClick() {
                         <img src="${currConditionImage}">
                         <h3>${currentCondition}</h3>
                         <h4>${currentTemp}°C</h4>
+                        <h4>Humidity</br>${humidity}%</h4>
+                        <h4>Wind</br>${windSpeed} m/s<h4>
                     </div>
                 `;
                 forecastAreaElement.innerHTML += htmlString;
@@ -70,6 +73,7 @@ function handleButtonClick() {
                     <td><h3>${dayOfWeek}</h3></td>
                     <td><img src="${currConditionImage}"></td>
                     <td><h4>${currentTemp}°C</h4></td>
+                    <td><h4>Humidity</br>${humidity}%</h4></td>                    
                 </tr>
                 `;
             forecastMobileElement.innerHTML += htmlString2;
@@ -141,16 +145,19 @@ function handleAutoClick() {
                     const currentConditionImageCode = data.list[i].weather[0].icon;
                     const currConditionImage = `https://openweathermap.org/img/wn/${currentConditionImageCode}@2x.png`;
                     const currentTemp = Math.round(data.list[i].main.temp);
-
+                    const humidity = data.list[i].main.humidity;               
+                    const windSpeed = data.list[i].wind.speed;
                     const timeStamp = data.list[i].dt;
                     const dayOfWeek = new Date(timeStamp * 1000).toLocaleDateString("en-GB", { weekday: 'short' });
 
                     const htmlString = `
-                        <div class="col">
+                        <div class="col"> 
                             <h3>${dayOfWeek}</h3>
                             <img src="${currConditionImage}">
                             <h3>${currentCondition}</h3>
                             <h4>${currentTemp}°C</h4>
+                            <h4>Humidity</br>${humidity}%</h4>
+                            <h4>Wind</br>${windSpeed} m/s<h4>
                         </div>
                     `;
                     forecastAreaElement.innerHTML += htmlString;
@@ -161,6 +168,7 @@ function handleAutoClick() {
                             <td><h3>${dayOfWeek}</h3></td>
                             <td><img src="${currConditionImage}"></td>
                             <td><h4>${currentTemp}°C</h4></td>
+                            <td><h4>Humidity</br>${humidity}%</h4></td>                            
                         </tr>
                     `;
                     forecastMobileElement.innerHTML += htmlString2;
