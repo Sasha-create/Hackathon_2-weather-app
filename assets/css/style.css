@@ -3,18 +3,6 @@
     text-align: center;
 }
 
-.hidden {
-    position: absolute;
-    clip: rect(1px 1px 1px 1px);
-    clip: rect(1px 1px 1px 1px);
-    padding: 0px;
-    border: 0px;
-    height: 0px;
-    width: 0px;
-    overflow: hidden;
-    
-  }
-  
 /* TOGGLE */
 body.light-theme {
     background-color: lightgoldenrodyellow;
