@@ -155,15 +155,6 @@ td {
     text-align: center;
 }
 
-/* @media screen and (min-width: 481px) {
-    .main {
-       width: 100%;
-    }
-
-    .col {
-        margin-bottom: 10px;
-    }
-} */
 @media screen and (max-width: 767px) {
     .main {
      width: 100%;
