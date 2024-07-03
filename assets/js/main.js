@@ -98,8 +98,8 @@ function switchInputChecked() {
 }
 
 function checkedTheme() {                           // checkedTheme is a function that runs when the page loads. It retrieves the theme from localStorage.
-                                                    // If no theme is set, it defaults to light (Theme.LIGHT) and stores this in localStorage.
-  const theme = localStorage.getItem('theme');
+  const theme = localStorage.getItem('theme');      // If no theme is set, it defaults to light (Theme.LIGHT) and stores this in localStorage.
+  
 
   if (!theme) {
     localStorage.setItem('theme', Theme.LIGHT);
