@@ -8,6 +8,8 @@ const currConditionImageElement = document.getElementById("curr-condition-img");
 const cityInputElement = document.getElementById("city-input");
 const submitButtonElement = document.getElementById("submit-button");
 const forecastAreaElement = document.getElementById("forecast-area");
+const spinnerElement = document.getElementById("spinner");
+
 
 submitButtonElement.addEventListener('click', handleButtonClick);
 
@@ -16,8 +18,14 @@ function handleButtonClick() {
     const cityName = cityInputElement.value;
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}`;
 
+    // Show the spinner
+    spinnerElement.style.display = 'block';
+
     fetch(url)
         .then(function (response) {
+            if (!response.ok) {
+                throw new Error(`Error in weather data`);
+            }
             return response.json();
         })
         .then(function (data) {
@@ -55,18 +63,27 @@ function handleButtonClick() {
                 `;
                 forecastAreaElement.innerHTML += htmlString;
             }
+            // Hide the spinner
+            spinnerElement.style.display = 'none';
         
-        
+        })
+        .catch(function (error) {
+            // Hide the spinner
+            spinnerElement.style.display = 'none';
+            alert.error(`Failed to retrieve weather data: ${error.message}`);
         });
 }
 
-// Steve's code for autolocation added seperately bacuase api call is a different format
+// Steve's code for autolocation added seperately bacuase api call is a different format to when entering a city name
 const autoLocateButton = document.getElementById("auto-location");
 const forecastMobileElement = document.getElementById("forecast-mobile"); //Part of table view for mobile users
 
 autoLocateButton.addEventListener('click', handleAutoClick);
 
 function handleAutoClick() {
+    // Show the spinner
+    spinnerElement.style.display = 'block';
+
     // Function to handle errors in geolocation retrieval
     function geolocationError(error) {
         console.error('Error getting geolocation:', error);
@@ -78,18 +95,15 @@ function handleAutoClick() {
     } else {
         console.log('Geolocation is not available in this browser.');
     }
-
+     // Function to handle success in geolocation retrieval
     function geolocationSuccess(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
     const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-    console.log(`latitude: ${lat}`)
-	console.log(`longitude: ${lon}`)
-    console.log(`url2: ${url2}`)
+    console.log(`latitude: ${lat}`) // Kept in code to diagnose issues if any occur during merges
+	console.log(`longitude: ${lon}`) // Kept in code to diagnose issues if any occur during merges
+    console.log(`url2: ${url2}`) // Kept in code to diagnose issues if any occur during merges
     
-    // old url: `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}`;
-    
-    // api call as given in documentation: api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}&units=${units}
 
         fetch(url2)
             .then(function (response) {
@@ -140,7 +154,9 @@ function handleAutoClick() {
                     `;
                     forecastMobileElement.innerHTML += htmlString2;
                 }
-            
+                
+            // Hide the spinner
+            spinnerElement.style.display = 'none';
             
             });
         }
