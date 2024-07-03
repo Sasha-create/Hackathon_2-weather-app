@@ -8,6 +8,8 @@ const currConditionImageElement = document.getElementById("curr-condition-img");
 const cityInputElement = document.getElementById("city-input");
 const submitButtonElement = document.getElementById("submit-button");
 const forecastAreaElement = document.getElementById("forecast-area");
+const spinnerElement = document.getElementById("spinner");
+
 
 submitButtonElement.addEventListener('click', handleButtonClick);
 
@@ -15,6 +17,9 @@ submitButtonElement.addEventListener('click', handleButtonClick);
 function handleButtonClick() {
     const cityName = cityInputElement.value;
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}`;
+
+    // Show the spinner
+    spinnerElement.style.display = 'block';
 
     fetch(url)
         .then(function (response) {
@@ -58,9 +63,15 @@ function handleButtonClick() {
                 `;
                 forecastAreaElement.innerHTML += htmlString;
             }
+            // Hide the spinner
+            spinnerElement.style.display = 'none';
         
         })
         .catch(function (error) {
+            // Hide the spinner
+            spinnerElement.style.display = 'none';
             alert.error(`Failed to retrieve weather data: ${error.message}`);
         });
     }
+
+    // Spinner
