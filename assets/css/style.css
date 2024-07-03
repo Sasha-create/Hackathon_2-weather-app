@@ -31,6 +31,12 @@
 margin-right: 0;
 }
 
+#spinner {
+    display: none;
+    font-size: 24px;
+    text-align: center;
+}
+
 /* @media screen and (min-width: 481px) {
     .main {
        width: 100%;
