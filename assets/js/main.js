@@ -30,6 +30,7 @@ function handleButtonClick() {
         })
         .then(function (data) {
             forecastAreaElement.innerHTML = "";
+            forecastMobileElement.innerHTML = ""; //Part of table view for mobile users
 
             const cityName = data.city.name;
             cityNameElement.innerText = cityName;
@@ -62,6 +63,16 @@ function handleButtonClick() {
                     </div>
                 `;
                 forecastAreaElement.innerHTML += htmlString;
+
+                //Part of table view for mobile users
+                const htmlString2 = `
+                <tr>
+                    <td><h3>${dayOfWeek}</h3></td>
+                    <td><img src="${currConditionImage}"></td>
+                    <td><h4>${currentTemp}°C</h4></td>
+                </tr>
+                `;
+            forecastMobileElement.innerHTML += htmlString2;
             }
             // Hide the spinner
             spinnerElement.style.display = 'none';
@@ -145,6 +156,7 @@ function handleAutoClick() {
                     `;
                     forecastAreaElement.innerHTML += htmlString;
 
+                    //Part of table view for mobile users
                     const htmlString2 = `
                         <tr>
                             <td><h3>${dayOfWeek}</h3></td>
