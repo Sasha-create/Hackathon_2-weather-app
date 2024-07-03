@@ -41,4 +41,4 @@ Register on the OpenWeatherMap website and get your API key.
 ### Add the API Key to our Project:
 
 - open main.js
-- Replace 'YOUR_API_KEY' with your actual API key.
+- Replace 'apiKey' with your actual API key.

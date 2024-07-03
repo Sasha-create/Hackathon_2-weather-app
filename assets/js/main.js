@@ -115,7 +115,6 @@ function handleAutoClick() {
 	console.log(`longitude: ${lon}`) // Kept in code to diagnose issues if any occur during merges
     console.log(`url2: ${url2}`) // Kept in code to diagnose issues if any occur during merges
     
-
         fetch(url2)
             .then(function (response) {
                 return response.json();
@@ -173,3 +172,45 @@ function handleAutoClick() {
             });
         }
 }
+
+    // TOGGLE
+
+    const body = document.querySelector('body');
+    const switchInput = document.querySelector('.js-switch-input');
+
+    switchInput.addEventListener('change', switchInputChecked);
+
+const Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme',
+};
+
+function switchInputChecked() {
+  const currentTheme = localStorage.getItem('theme'); //  checks the current theme stored in localStorage
+  if (currentTheme === Theme.LIGHT) {                 // if the current theme is light (Theme.LIGHT), it switches to dark: adds the dark-theme class to the body
+    body.classList.add(Theme.DARK);
+    localStorage.setItem('theme', Theme.DARK);
+  } else {                                          // if the current theme is dark or not set, it switches to light: Removes the dark-theme class from the body
+    body.classList.remove(Theme.DARK);
+    localStorage.setItem('theme', Theme.LIGHT);
+  }
+}
+
+function checkedTheme() {                           // checkedTheme is a function that runs when the page loads. It retrieves the theme from localStorage.
+  const theme = localStorage.getItem('theme');      // If no theme is set, it defaults to light (Theme.LIGHT) and stores this in localStorage.
+  
+
+  if (!theme) {
+    localStorage.setItem('theme', Theme.LIGHT);
+  }
+
+  if (theme === Theme.DARK) {
+    body.classList.add(Theme.DARK);
+    switchInput.checked = true;
+  }
+
+  if (theme === Theme.LIGHT) {
+    body.classList.add(Theme.LIGHT);
+  }
+}
+checkedTheme();
