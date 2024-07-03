@@ -26,3 +26,19 @@ The design of the Weather Web App was crafted using Figma, focusing on a user-fr
 - For styling and layout.
 - **Javascript:**
 - For dynamic content and interactions.
+
+
+# API integration
+
+This web app uses the OpenWeatherMap API to fetch real-time weather data and forecasts. You will need an API key to access the weather data.
+
+## Configuring the API Key
+
+### Sign Up for an API Key: 
+
+Register on the OpenWeatherMap website and get your API key.
+
+### Add the API Key to our Project:
+
+- open main.js
+- Replace 'YOUR_API_KEY' with your actual API key.
