@@ -74,7 +74,7 @@ function handleButtonClick() {
         });
 }
 
-// Steve's code for autolocation added seperately bacuase api call is a different format
+// Steve's code for autolocation added seperately bacuase api call is a different format to when entering a city name
 const autoLocateButton = document.getElementById("auto-location");
 
 autoLocateButton.addEventListener('click', handleAutoClick);
@@ -91,18 +91,15 @@ function handleAutoClick() {
     } else {
         console.log('Geolocation is not available in this browser.');
     }
-
+     // Function to handle success in geolocation retrieval
     function geolocationSuccess(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
     const url2 = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
-    console.log(`latitude: ${lat}`)
-	console.log(`longitude: ${lon}`)
-    console.log(`url2: ${url2}`)
+    console.log(`latitude: ${lat}`) // Kept in code to diagnose issues if any occur during merges
+	console.log(`longitude: ${lon}`) // Kept in code to diagnose issues if any occur during merges
+    console.log(`url2: ${url2}`) // Kept in code to diagnose issues if any occur during merges
     
-    // old url: `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}`;
-    
-    // api call as given in documentation: api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}&units=${units}
 
         fetch(url2)
             .then(function (response) {
