@@ -87,17 +87,18 @@ const Theme = {
 };
 
 function switchInputChecked() {
-  const currentTheme = localStorage.getItem('theme');
-  if (currentTheme === Theme.LIGHT) {
+  const currentTheme = localStorage.getItem('theme'); //  checks the current theme stored in localStorage
+  if (currentTheme === Theme.LIGHT) {                 // if the current theme is light (Theme.LIGHT), it switches to dark: adds the dark-theme class to the body
     body.classList.add(Theme.DARK);
     localStorage.setItem('theme', Theme.DARK);
-  } else {
+  } else {                                          // if the current theme is dark or not set, it switches to light: Removes the dark-theme class from the body
     body.classList.remove(Theme.DARK);
     localStorage.setItem('theme', Theme.LIGHT);
   }
 }
 
-function checkedTheme() {
+function checkedTheme() {                           // checkedTheme is a function that runs when the page loads. It retrieves the theme from localStorage.
+                                                    // If no theme is set, it defaults to light (Theme.LIGHT) and stores this in localStorage.
   const theme = localStorage.getItem('theme');
 
   if (!theme) {
