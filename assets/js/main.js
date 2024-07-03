@@ -80,6 +80,9 @@ const autoLocateButton = document.getElementById("auto-location");
 autoLocateButton.addEventListener('click', handleAutoClick);
 
 function handleAutoClick() {
+    // Show the spinner
+    spinnerElement.style.display = 'block';
+
     // Function to handle errors in geolocation retrieval
     function geolocationError(error) {
         console.error('Error getting geolocation:', error);
@@ -140,7 +143,9 @@ function handleAutoClick() {
                     `;
                     forecastAreaElement.innerHTML += htmlString;
                 }
-            
+                
+            // Hide the spinner
+            spinnerElement.style.display = 'none';
             
             });
         }
