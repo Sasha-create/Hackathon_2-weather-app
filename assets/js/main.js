@@ -9,10 +9,18 @@ const cityInputElement = document.getElementById("city-input");
 const submitButtonElement = document.getElementById("submit-button");
 const forecastAreaElement = document.getElementById("forecast-area");
 const spinnerElement = document.getElementById("spinner");
-
-
+const autoLocateButton = document.getElementById("auto-location");
+const forecastMobileElement = document.getElementById("forecast-mobile"); //Part of table view for mobile users
+const body = document.querySelector('body');
+const switchInput = document.querySelector('.js-switch-input');
+autoLocateButton.addEventListener('click', handleAutoClick);
 submitButtonElement.addEventListener('click', handleButtonClick);
+switchInput.addEventListener('change', switchInputChecked);
 
+const Theme = {
+LIGHT: 'light-theme',
+DARK: 'dark-theme',
+};
 
 function handleButtonClick() {
     const cityName = cityInputElement.value;
@@ -90,10 +98,6 @@ function handleButtonClick() {
 }
 
 // Steve's code for autolocation added seperately bacuase api call is a different format to when entering a city name
-const autoLocateButton = document.getElementById("auto-location");
-const forecastMobileElement = document.getElementById("forecast-mobile"); //Part of table view for mobile users
-
-autoLocateButton.addEventListener('click', handleAutoClick);
 
 function handleAutoClick() {
     // Show the spinner
@@ -182,16 +186,6 @@ function handleAutoClick() {
 }
 
     // TOGGLE
-
-    const body = document.querySelector('body');
-    const switchInput = document.querySelector('.js-switch-input');
-
-    switchInput.addEventListener('change', switchInputChecked);
-
-const Theme = {
-  LIGHT: 'light-theme',
-  DARK: 'dark-theme',
-};
 
 function switchInputChecked() {
   const currentTheme = localStorage.getItem('theme'); //  checks the current theme stored in localStorage
