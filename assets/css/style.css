@@ -168,39 +168,3 @@ td {
         display: none;
     }
   }
-
-  .submit-button {
-    background-color: orange;
-  border-radius: 100px;
-  cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  border: 0;
-  font-size: 16px;
-  }
-
-.submit-button:hover {
-  box-shadow: grey;
-}
-
-.locateMe-button {
-    background-color: orange;
-    border-radius: 100px;
-    cursor: pointer;
-    display: inline-block;
-    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
-    padding: 7px 20px;
-    text-align: center;
-    text-decoration: none;
-    border: 0;
-    font-size: 16px;
-  }
-
-.locateMe-button:hover {
-  box-shadow: grey;
-}
-
- 
