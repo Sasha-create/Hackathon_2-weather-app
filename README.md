@@ -12,6 +12,8 @@ This application provides real-time weather data and forecasts for specific loca
   - [Technologies Used](#technologies-used)
   - [Installation](#installation)
   - [API integration](#api-integration)
+  - [MVP](#mvp)
+  - [Testing](#testing)
   - [Configuring the API Key](#configuring-the-api-key)
     - [Sign Up for an API Key:](#sign-up-for-an-api-key)
     - [Add the API Key to our Project:](#add-the-api-key-to-our-project)
@@ -77,6 +79,14 @@ Register on the OpenWeatherMap website and get your API key.
 
 - open main.js
 - Replace 'apiKey' with your actual API key.
+
+# MVP
+
+![dark](assets/images/dark.jpg) ![light](assets/images/light.jpg)
+
+## Testing
+
+![test](assets/images/Screenshot%202024-07-04%20at%2011.02.51.png)
 
 ## Contributors
 
