@@ -82,9 +82,13 @@ Register on the OpenWeatherMap website and get your API key.
 
 # MVP
 
-![dark](assets/images/dark.jpg) ![light](assets/images/light.jpg)
+### The Weather Web App minimum viable product
+
+![dark](assets/images/mvp-design.jpg)
 
 ## Testing
+
+### The process of validating a minimum viable product through a Lighthouse
 
 ![test](assets/images/Screenshot%202024-07-04%20at%2011.02.51.png)
 
