@@ -2,6 +2,25 @@
 
 This application provides real-time weather data and forecasts for specific locations. Designed with user experience in mind, our app ensures that you stay informed and prepared for various weather conditions.
 
+## Table of Contents
+
+- [Weather Web App](#weather-web-app)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Design](#design)
+  - [Technologies Used](#technologies-used)
+  - [Installation](#installation)
+  - [API integration](#api-integration)
+  - [Configuring the API Key](#configuring-the-api-key)
+    - [Sign Up for an API Key:](#sign-up-for-an-api-key)
+    - [Add the API Key to our Project:](#add-the-api-key-to-our-project)
+  - [Contributors](#contributors)
+  - [License](#license)
+
+## Introduction
+
+The Weather Web App is a user-friendly tool that offers real-time weather information and a 5-day forecast for any chosen location. Utilizing the OpenWeatherMap API, this app provides accurate and up-to-date weather data.
 
 ## Features
 
@@ -30,6 +49,19 @@ The design of the Weather Web App was crafted using Figma, focusing on a user-fr
 - **Javascript:**
 - For dynamic content and interactions.
 
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Sasha-create/Hackathon_2-weather-app.git
+Navigate to the project directory:
+bash
+Copy code
+cd Hackathon_2-weather-app
+Usage
+Open index.html in your web browser to start using the Weather Web App. Enter a location to get real-time weather data and a 5-day forecast.
 
 # API integration
 
@@ -45,3 +77,13 @@ Register on the OpenWeatherMap website and get your API key.
 
 - open main.js
 - Replace 'apiKey' with your actual API key.
+
+## Contributors
+
+- Aleksandra Knott
+- Steve Taylor
+- Suraj Rajendran
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
