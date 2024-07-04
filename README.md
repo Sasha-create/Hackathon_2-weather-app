@@ -18,6 +18,9 @@ This application provides real-time weather data and forecasts for specific loca
 
 The design of the Weather Web App was crafted using Figma, focusing on a user-friendly interface and seamless user experience. The clean and intuitive design helps users quickly find the information they need.
 
+![desktop](assets/images/desktop.jpg)
+![mobile](assets/images/mobile.jpg)
+
 ## Technologies Used
 
 - **HTML:**
